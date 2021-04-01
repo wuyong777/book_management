@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+    <settings>
+        <setting name="logImpl" value="LOG4J"/>
+    </settings>
+
+    <!--配置数据源，现在交给spring-->
+    <typeAliases>
+        <package name="top.unclens.pojo"></package>
+    </typeAliases>
+
+    <mappers>
+        <mapper class="top.unclens.dao.BookMapper"></mapper>
+    </mappers>
+
+</configuration>
