@@ -16,7 +16,8 @@
     <update id="updateBook" parameterType="Books">
         update ssmbuild.books
         set bookName = #{bookName} , bookCounts = #{bookCounts} , detail = #{detail}
-        where bookID = #{bookID};//注意这里是bookID,不是bookId,因为没有@Param设置参数!!
+        where bookID = #{bookID};
+        <!--注意这里是bookID,不是bookId,因为没有@Param设置参数-->
     </update>
 
     <select id="queryBookById" resultType="Books">
@@ -25,6 +26,10 @@
 
     <select id="queryAllBook" resultType="Books">
         select * from ssmbuild.books;
+    </select>
+
+    <select id="queryBookByName" resultType="Books">
+        select * from ssmbuild.books where bookName like "%"#{queryBookName}"%";
     </select>
 
 </mapper>

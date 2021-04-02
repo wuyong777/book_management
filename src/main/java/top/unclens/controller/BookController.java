@@ -56,5 +56,11 @@ public class BookController {
         bookService.deleteBookById(id);
         return "redirect:/book/allBooks";
     }
-
+    @RequestMapping("/queryBook")
+    public String queryBook(String queryBookName,Model model){
+        List<Books> books = bookService.queryBookByName(queryBookName);
+        model.addAttribute("name",queryBookName);
+        model.addAttribute("books", books);
+        return "allBooks";
+    }
 }

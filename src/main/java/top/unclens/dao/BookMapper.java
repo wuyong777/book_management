@@ -43,4 +43,6 @@ public interface BookMapper {
      * @return
      */
     List<Books> queryAllBook();
+
+    List<Books> queryBookByName(String queryBookName);
 }

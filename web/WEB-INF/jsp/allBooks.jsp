@@ -18,7 +18,7 @@
             text-align: center;
         }
         table th{
-            background-color: aqua;
+            background-color: lightgray;
         }
     </style>
 </head>
@@ -27,6 +27,13 @@
 <h3>书籍列表</h3>
     <div>
         <a href="${pageContext.request.contextPath}/book/toAddBook"><button type="button" class="btn btn-primary" style="float: right;margin: 5px">新增书籍</button></a>
+    </div>
+    <div>
+        <form action="${pageContext.request.contextPath}/book/queryBook" method="post" style="float: left;margin: 5px" class="form-inline">
+            <input type="text" name="queryBookName" class="form-control" value="${name}">
+            <input type="submit" value="查询" class="btn btn-primary">
+        </form>
+
     </div>
     <table class="table table-bordered table-hover table-striped">
         <tr>
